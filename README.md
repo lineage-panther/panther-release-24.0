@@ -33,6 +33,8 @@ This release is **alpha**. We estimate it is approximately 90% functional; that 
 
 See the [24.0 alpha release](https://github.com/lineage-panther/panther-release-24.0/releases/tag/24.0-alpha-20261016) for the ROM ZIP, checksum, and boot images.
 
+See the [installation guide](INSTALL.md) before installing.
+
 Verify the ROM ZIP after downloading it:
 
 ```sh
