@@ -17,6 +17,14 @@ The build is assembled using this project's [custom manifest](https://github.com
 
 These source repositories are maintained by their respective upstream owners; this project is not affiliated with them.
 
+## Showcase
+
+These screenshots show the ROM running on a Pixel 7. The wallpaper, accent colors, installed apps, and some Quick Settings labels reflect the owner's personal setup and are not defaults guaranteed by the ROM.
+
+| Home screen | Quick Settings |
+| --- | --- |
+| ![Pixel 7 home screen](docs/showcase/home-screen.jpg) | ![Pixel 7 Quick Settings](docs/showcase/quick-settings.png) |
+
 ## Status
 
 This release is **alpha**. We estimate it is approximately 90% functional; that is an estimate, not a measured compatibility score. The owner reports daily-driving the October 16, 2026 build. Basic ADB smoke checks confirmed Android 17, completed boot, enforcing SELinux, and running SystemUI and camera services. This does not verify every feature or hardware component; broader ADB and device testing is still needed.
