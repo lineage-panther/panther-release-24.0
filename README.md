@@ -35,7 +35,7 @@ MindTheGapps is not included. Obtain any additional packages from their respecti
 
 ## Release process
 
-Release candidates are built and validated on the maintainer's local Android build machine, then uploaded as GitHub Release assets only after the build and archive/checksum checks succeed. The weekly build schedule is best-effort: a release is not published when synchronization, compilation, or validation fails. A GitHub-hosted runner does not build the ROM.
+Release candidates are built and validated on the owner's local machine, then uploaded as GitHub Release assets only after the build and archive/checksum checks succeed. The weekly build schedule is best-effort: a release is not published when synchronization, compilation, or validation fails.
 
 ## Report a bug or request a feature
 
