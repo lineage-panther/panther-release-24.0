@@ -4,6 +4,19 @@ An unofficial, community-maintained Android 17 / LineageOS 24.0-based build for 
 
 This is an independent project. It is not affiliated with or endorsed by LineageOS or Google. Upstream components retain their own copyrights and licenses.
 
+## Source repositories
+
+The build is assembled using this project's [custom manifest](https://github.com/lineage-panther/android_manifests). The manifest references upstream sources, including:
+
+- [LineageOS Android base manifest (`lineage-24.0`)](https://github.com/LineageOS/android/tree/lineage-24.0)
+- [Pixel 7 device tree](https://github.com/LineageOS/android_device_google_panther/tree/lineage-24.0)
+- [Shared Pixel device tree](https://github.com/LineageOS/android_device_google_pantah/tree/lineage-24.0)
+- [Tensor G2 common device tree](https://github.com/LineageOS/android_device_google_gs201/tree/lineage-24.0)
+- [Pixel device kernels](https://github.com/LineageOS/android_device_google_pantah-kernels)
+- [Proprietary Pixel 7 vendor files](https://github.com/TheMuppets/proprietary_vendor_google_panther/tree/lineage-24.0)
+
+These source repositories are maintained by their respective upstream owners; this project is not affiliated with them.
+
 ## Status
 
 This release is **alpha**. The developer estimates it is approximately 90% functional; that is an estimate, not a measured compatibility score. The developer reports daily-driving the October 16, 2026 build. Basic ADB smoke checks confirmed Android 17, completed boot, enforcing SELinux, and running SystemUI and camera services. This does not verify every feature or hardware component; broader ADB and device testing is still needed.
@@ -19,6 +32,10 @@ sha256sum -c lineage-24.0-20261016-UNOFFICIAL-panther.zip.sha256sum
 ```
 
 MindTheGapps is not included. Obtain any additional packages from their respective official sources.
+
+## Release process
+
+Release candidates are built and validated on the maintainer's local Android build machine, then uploaded as GitHub Release assets only after the build and archive/checksum checks succeed. The weekly build schedule is best-effort: a release is not published when synchronization, compilation, or validation fails. A GitHub-hosted runner does not build the ROM.
 
 ## Report a bug or request a feature
 
