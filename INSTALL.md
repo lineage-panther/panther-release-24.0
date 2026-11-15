@@ -2,7 +2,7 @@
 
 These are unofficial instructions for the Pixel 7 (`panther`) and the release linked below. Read the full guide before starting. The owner tested the clean-install procedure on one Pixel 7 after installing and booting official Google Android 17 stock firmware. Other devices, firmware versions, and installation paths have not been verified.
 
-Installing this ROM is at your own risk. Back up anything important first. Unlocking the bootloader **WILL** erase user data. Keep the bootloader unlocked after installation; do not relock it while running this unofficial build.
+Installing this ROM is at your own risk. Back up anything important first. Unlocking the bootloader **WILL** erase user data. Keep the bootloader unlocked after installation; **DO NOT** relock it while running this unofficial build.
 
 ## Clean install
 
