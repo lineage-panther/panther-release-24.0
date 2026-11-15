@@ -19,7 +19,7 @@ These source repositories are maintained by their respective upstream owners; th
 
 ## Status
 
-This release is **alpha**. The developer estimates it is approximately 90% functional; that is an estimate, not a measured compatibility score. The developer reports daily-driving the October 16, 2026 build. Basic ADB smoke checks confirmed Android 17, completed boot, enforcing SELinux, and running SystemUI and camera services. This does not verify every feature or hardware component; broader ADB and device testing is still needed.
+This release is **alpha**. We estimate it is approximately 90% functional; that is an estimate, not a measured compatibility score. The owner reports daily-driving the October 16, 2026 build. Basic ADB smoke checks confirmed Android 17, completed boot, enforcing SELinux, and running SystemUI and camera services. This does not verify every feature or hardware component; broader ADB and device testing is still needed.
 
 ## Download
 
