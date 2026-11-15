@@ -23,7 +23,7 @@ These screenshots show the ROM running on a Pixel 7. The wallpaper, accent color
 
 | Home screen | Quick Settings |
 | --- | --- |
-| ![Pixel 7 home screen](docs/showcase/home-screen.jpg) | ![Pixel 7 Quick Settings](docs/showcase/quick-settings.png) |
+| ![Pixel 7 home screen](docs/showcase/home-screen.jpg) | ![Pixel 7 Quick Settings](docs/showcase/quick-settings.jpg) |
 
 ## Status
 
