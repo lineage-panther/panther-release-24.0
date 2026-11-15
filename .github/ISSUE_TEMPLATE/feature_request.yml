@@ -1,0 +1,32 @@
+name: Feature or patch proposal
+description: Suggest a feature or describe a patch that could improve Panther ROM
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For source-code changes, identify the affected upstream project and path. This release repository does not contain the ROM source tree.
+  - type: input
+    id: component
+    attributes:
+      label: Component or repository path
+      placeholder: "device/google/panther"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or motivation
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation or test plan

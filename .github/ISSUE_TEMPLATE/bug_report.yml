@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a reproducible problem with a Panther ROM alpha build
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting, check that the issue is reproducible on a listed release. Remove personal data, serial numbers, account details, and tokens from logs.
+  - type: input
+    id: release
+    attributes:
+      label: Release tag or build date
+      placeholder: "24.0-alpha-20261016"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and codename
+      placeholder: "Google Pixel 7 (panther)"
+    validations:
+      required: true
+  - type: dropdown
+    id: install_type
+    attributes:
+      label: Installation type
+      options:
+        - Clean install
+        - Upgrade from an earlier build
+        - Other or unsure
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Include expected and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: tested_features
+    attributes:
+      label: Related features tested
+      description: For example, calls, mobile data, Wi-Fi, camera, Bluetooth, fingerprint, GPS, or NFC.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Attach a sanitized log file or paste a short excerpt. Do not include private data.
+      render: text

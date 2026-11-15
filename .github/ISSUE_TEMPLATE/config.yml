@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Current alpha release
+    url: https://github.com/lineage-panther/panther-release-24.0/releases/tag/24.0-alpha-20261016
+    about: Check the release notes and known alpha limitations first.
+  - name: Manifest and build configuration
+    url: https://github.com/lineage-panther/android_manifests/issues
+    about: Report issues specific to the source manifest or build configuration.
