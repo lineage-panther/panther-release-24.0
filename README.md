@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/brand/panther-logo.jpg" alt="Panther ROM logo" width="480">
+  <img src="docs/brand/panther-logo.png" alt="Panther ROM logo" width="320">
 </p>
 
-# Panther ROM
+<h1 align="center">Panther ROM</h1>
 
 <p align="center">
   <a href="https://github.com/lineage-panther/panther-release-24.0/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/lineage-panther/panther-release-24.0?label=release"></a>
