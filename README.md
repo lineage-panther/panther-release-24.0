@@ -1,4 +1,16 @@
+<p align="center">
+  <img src="docs/brand/panther-logo.jpg" alt="Panther ROM logo" width="480">
+</p>
+
 # Panther ROM
+
+<p align="center">
+  <a href="https://github.com/lineage-panther/panther-release-24.0/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/lineage-panther/panther-release-24.0?label=release"></a>
+  <img alt="Release status: alpha" src="https://img.shields.io/badge/status-alpha-orange">
+  <img alt="Android 17" src="https://img.shields.io/badge/Android-17-green">
+  <img alt="Target: Pixel 7 panther" src="https://img.shields.io/badge/device-Pixel%207%20(panther)-blue">
+  <a href="https://github.com/lineage-panther/panther-release-24.0/releases"><img alt="Total release downloads" src="https://img.shields.io/github/downloads/lineage-panther/panther-release-24.0/total?label=downloads"></a>
+</p>
 
 An unofficial, community-maintained Android 17 / LineageOS 24.0-based build for Google Pixel 7 (`panther`).
 
