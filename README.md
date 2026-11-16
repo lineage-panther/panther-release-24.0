@@ -41,6 +41,15 @@ These screenshots show the ROM running on a Pixel 7. The wallpaper, accent color
 
 This release is **alpha**. We estimate it is approximately 90% functional; that is an estimate, not a measured compatibility score. The owner reports daily-driving the October 16, 2026 build. Basic ADB smoke checks confirmed Android 17, completed boot, enforcing SELinux, and running SystemUI and camera services. This does not verify every feature or hardware component; broader ADB and device testing is still needed.
 
+## Build details
+
+- Android version: 17
+- OTA build ID (`post-build`): `CP2A.260705.006`
+- OTA fingerprint: `google/panther/panther:17/CP2A.260705.006/15641320:user/release-keys`
+- Android security patch level: `2026-10-01`
+
+These values come from the release ZIP's OTA metadata. They identify this ROM build and are distinct from the stock firmware, bootloader, or baseband version currently installed on a device.
+
 ## Download
 
 See the [24.0 alpha release](https://github.com/lineage-panther/panther-release-24.0/releases/tag/24.0-alpha-20261016) for the ROM ZIP, checksum, and boot images.

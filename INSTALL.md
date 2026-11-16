@@ -2,6 +2,8 @@
 
 These are unofficial instructions for the Pixel 7 (`panther`) and the release linked below. Read the full guide before starting. The owner tested the clean-install procedure on one Pixel 7 after installing and booting official Google Android 17 stock firmware. Other devices, firmware versions, and installation paths have not been verified.
 
+The release ZIP identifies itself as Android build `CP2A.260705.006` (`google/panther/panther:17/CP2A.260705.006/15641320:user/release-keys`) with security patch level `2026-10-01`. This is the ROM build ID, not the required starting stock firmware version or the bootloader/baseband version.
+
 Installing this ROM is at your own risk. Back up anything important first. Unlocking the bootloader **WILL** erase user data. Keep the bootloader unlocked after installation; **DO NOT** relock it while running this unofficial build.
 
 ## Clean install
