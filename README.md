@@ -43,10 +43,12 @@ This release is **alpha**. We estimate it is approximately 90% functional; that 
 
 ## Build details
 
+<!-- BEGIN AUTO-GENERATED BUILD DETAILS -->
 - Android version: 17
 - OTA build ID (`post-build`): `CP2A.260705.006`
 - OTA fingerprint: `google/panther/panther:17/CP2A.260705.006/15641320:user/release-keys`
 - Android security patch level: `2026-10-01`
+<!-- END AUTO-GENERATED BUILD DETAILS -->
 
 These values come from the release ZIP's OTA metadata. They identify this ROM build and are distinct from the stock firmware, bootloader, or baseband version currently installed on a device.
 
@@ -68,7 +70,7 @@ MindTheGapps is not included. Obtain any additional packages from their respecti
 
 Weekly builds are published as GitHub pre-releases after compilation, without device or functional testing. Each pre-release is explicitly labeled untested, and the built-in Updater feed points to the newest pre-release only. Older GitHub releases remain available, but the Updater does not offer a one-tap downgrade. A normal release is published only after the tester manually installs and evaluates a candidate.
 
-The weekly pre-release automation updates the `ota/panther.json` feed after the release ZIP is published. If feed publication fails, the release remains available on GitHub but will not appear in the built-in Updater.
+After each weekly pre-release, the automation refreshes the build details above and the `ota/panther.json` feed from the release ZIP. If either update fails, the release remains available on GitHub, but the details or built-in Updater feed may be stale.
 
 ## Report a bug or request a feature
 
