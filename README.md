@@ -70,7 +70,7 @@ MindTheGapps is not included. Obtain any additional packages from their respecti
 
 Weekly builds are published as GitHub pre-releases after compilation, without device or functional testing. Each pre-release is explicitly labeled untested, and the built-in Updater feed points to the newest pre-release only. Older GitHub releases remain available, but the Updater does not offer a one-tap downgrade. A normal release is published only after the tester manually installs and evaluates a candidate.
 
-The weekly pre-release automation updates the `ota/panther.json` feed after the release ZIP is published. If feed publication fails, the release remains available on GitHub but will not appear in the built-in Updater.
+The weekly pre-release automation updates the Build details above and the `ota.json` feed after the release ZIP is published. If either update fails, the release remains available on GitHub, but the details or built-in Updater feed may be stale.
 
 ## Report a bug or request a feature
 

@@ -149,8 +149,8 @@ def main() -> None:
     parser.add_argument("package", type=Path, help="built Panther OTA ZIP")
     parser.add_argument("--tag", required=True, help="GitHub release tag containing the ZIP")
     parser.add_argument(
-        "--output", type=Path, default=Path("ota/panther.json"),
-        help="feed JSON output path (default: ota/panther.json)",
+        "--output", type=Path, default=Path("ota.json"),
+        help="feed JSON output path (default: ota.json)",
     )
     parser.add_argument(
         "--readme", type=Path, default=Path("README.md"),
