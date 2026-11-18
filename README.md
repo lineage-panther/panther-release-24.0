@@ -66,7 +66,7 @@ MindTheGapps is not included. Obtain any additional packages from their respecti
 
 ## Release process
 
-Weekly builds are published as GitHub pre-releases after compilation, without device or functional testing. Each pre-release is explicitly labeled untested, and the built-in Updater feed points to the newest pre-release only. Older GitHub releases remain available, but the Updater does not offer a one-tap downgrade. A normal release is published only after the maintainer manually installs and evaluates a candidate.
+Weekly builds are published as GitHub pre-releases after compilation, without device or functional testing. Each pre-release is explicitly labeled untested, and the built-in Updater feed points to the newest pre-release only. Older GitHub releases remain available, but the Updater does not offer a one-tap downgrade. A normal release is published only after the tester manually installs and evaluates a candidate.
 
 The `ota/panther.json` feed follows the LineageOS Updater JSON format. Generate its single candidate entry after uploading a release ZIP:
 
