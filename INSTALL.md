@@ -71,4 +71,11 @@ In Lineage Recovery:
 
 ## Updating an existing install
 
-For an existing Panther ROM install, back up important data and use the built-in Updater only when it offers a compatible update for this ROM. Follow its on-device instructions and **DO NOT** factory-reset for a routine update. The release page provides a downloadable ZIP but does not guarantee that an OTA feed is configured or that this release will appear automatically in Updater. If it is not offered, do not flash images or use clean-install steps as an upgrade procedure; ask in the [issue tracker](https://github.com/lineage-panther/panther-release-24.0/issues/new/choose) for release-specific upgrade guidance.
+For an existing Panther ROM install, back up important data. To update offline from a ZIP already on the phone:
+
+1. Open **System updates**.
+2. Choose **Install local update**.
+3. Select the ROM ZIP and wait for the Updater to import and verify it.
+4. Select the imported update and follow the on-screen installation steps. Reboot when prompted.
+
+This local ZIP import does not require an internet connection. Do not select a package for a different device or build. For an online update, use the built-in Updater only when it offers a compatible update for this ROM; follow its on-device instructions and **DO NOT** factory-reset for a routine update. An online feed for this project may not be configured, so a GitHub release is not guaranteed to appear automatically. If the update is not offered, use the local ZIP option or ask in the [issue tracker](https://github.com/lineage-panther/panther-release-24.0/issues/new/choose) for release-specific upgrade guidance.
