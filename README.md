@@ -59,7 +59,7 @@ See the [installation guide](INSTALL.md) before installing.
 Verify the ROM ZIP after downloading it:
 
 ```sh
-sha256sum -c lineage-24.0-20261016-UNOFFICIAL-panther.zip.sha256sum
+sha256sum -c lineage-24.0-*-UNOFFICIAL-panther.zip.sha256sum
 ```
 
 MindTheGapps is not included. Obtain any additional packages from their respective official sources.
