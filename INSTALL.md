@@ -71,11 +71,23 @@ In Lineage Recovery:
 
 ## Updating an existing install
 
-For an existing Panther ROM install, back up important data. To update offline from a ZIP already on the phone:
+For an existing Panther ROM install, back up important data. The built-in Updater can check the project's online feed when connected, or import a ZIP already on the phone for an offline update.
+
+### Online update
+
+Open **System updates** and check for updates. An offered weekly build is labeled **ALPHA PRE-RELEASE (UNTESTED)**; compilation is not the same as device testing. Read the corresponding GitHub release notes before installing. The feed advertises the latest candidate only. Routine updates do not require a factory reset.
+
+### Offline update from a ZIP
 
 1. Open **System updates**.
 2. Choose **Install local update**.
 3. Select the ROM ZIP and wait for the Updater to import and verify it.
 4. Select the imported update and follow the on-screen installation steps. Reboot when prompted.
 
-This local ZIP import does not require an internet connection. Do not select a package for a different device or build. For an online update, use the built-in Updater only when it offers a compatible update for this ROM; follow its on-device instructions and **DO NOT** factory-reset for a routine update. An online feed for this project may not be configured, so a GitHub release is not guaranteed to appear automatically. If the update is not offered, use the local ZIP option or ask in the [issue tracker](https://github.com/lineage-panther/panther-release-24.0/issues/new/choose) for release-specific upgrade guidance.
+This local ZIP import does not require an internet connection. Do not select a package for a different device or build.
+
+### Recovery and older builds
+
+The Updater blocks downgrades by default. Older ZIPs remain on GitHub, but there is no in-app downgrade button, and installing an older build over a newer one is not supported or tested. If recovery or a return to stock is needed, follow the current official Google factory-image instructions for `panther`; this may erase all data. Do not switch slots manually or mix boot, kernel, or firmware images from different releases. Keep a separate backup and do not rely on an older release as a guaranteed rollback.
+
+If an expected update is not offered, do not bypass the Updater's compatibility checks. Use the local ZIP option only for a compatible, non-older Panther build, or ask in the [issue tracker](https://github.com/lineage-panther/panther-release-24.0/issues/new/choose) for release-specific guidance.

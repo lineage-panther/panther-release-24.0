@@ -22,7 +22,7 @@ The build is assembled using this project's [custom manifest](https://github.com
 
 - [LineageOS Android base manifest (`lineage-24.0`)](https://github.com/LineageOS/android/tree/lineage-24.0)
 - [Pixel 7 device tree](https://github.com/LineageOS/android_device_google_panther/tree/lineage-24.0)
-- [Shared Pixel device tree](https://github.com/LineageOS/android_device_google_pantah/tree/lineage-24.0)
+- [Shared Pixel device tree fork](https://github.com/lineage-panther/android_device_google_pantah/tree/lineage-24.0) (based on [LineageOS upstream](https://github.com/LineageOS/android_device_google_pantah/tree/lineage-24.0))
 - [Tensor G2 common device tree](https://github.com/LineageOS/android_device_google_gs201/tree/lineage-24.0)
 - [Pixel device kernels](https://github.com/LineageOS/android_device_google_pantah-kernels)
 - [Proprietary Pixel 7 vendor files](https://github.com/TheMuppets/proprietary_vendor_google_panther/tree/lineage-24.0)
@@ -66,7 +66,16 @@ MindTheGapps is not included. Obtain any additional packages from their respecti
 
 ## Release process
 
-Release candidates are built and validated on the owner's local machine, then uploaded as GitHub Release assets only after the build and archive/checksum checks succeed. The weekly build schedule is best-effort: a release is not published when synchronization, compilation, or validation fails.
+Weekly builds are published as GitHub pre-releases after compilation, without device or functional testing. Each pre-release is explicitly labeled untested, and the built-in Updater feed points to the newest pre-release only. Older GitHub releases remain available, but the Updater does not offer a one-tap downgrade. A normal release is published only after the maintainer manually installs and evaluates a candidate.
+
+The `ota/panther.json` feed follows the LineageOS Updater JSON format. Generate its single candidate entry after uploading a release ZIP:
+
+```sh
+python3 scripts/generate_ota_feed.py /path/to/lineage-24.0-UNOFFICIAL-panther.zip \
+  --tag 24.0-alpha-YYYYMMDD
+```
+
+The generated entry takes its timestamp, Android SDK and security patch levels, and A/B property-file ranges from the signed OTA ZIP; it also records the ZIP's SHA-256 and size. Do not advertise a package until its release asset is available.
 
 ## Report a bug or request a feature
 
