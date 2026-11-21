@@ -1,8 +1,8 @@
 # Install Panther ROM 24.0 alpha
 
-These are unofficial instructions for the Pixel 7 (`panther`) and the release linked below. Read the full guide before starting. The owner tested the clean-install procedure on one Pixel 7 after installing and booting official Google Android 17 stock firmware. Other devices, firmware versions, and installation paths have not been verified.
+These are unofficial instructions for the Pixel 7 (`panther`). Read the full guide and the notes for the exact release you are installing. The owner tested the clean-install procedure on one Pixel 7; other devices, firmware versions, and installation paths have not been verified.
 
-The release ZIP identifies itself as Android build `CP2A.260705.006` (`google/panther/panther:17/CP2A.260705.006/15641320:user/release-keys`) with security patch level `2026-10-01`. This is the ROM build ID, not the required starting stock firmware version or the bootloader/baseband version.
+The release notes and the project's [current build details](README.md#build-details) identify the exact Android build ID, fingerprint, and security patch level. These ROM values are distinct from the Google stock firmware version required before installation and from the bootloader/baseband versions that may be written by the ROM payload.
 
 Installing this ROM is at your own risk. Back up anything important first. Unlocking the bootloader **WILL** erase user data. Keep the bootloader unlocked after installation; **DO NOT** relock it while running this unofficial build.
 
@@ -12,13 +12,13 @@ Installing this ROM is at your own risk. Back up anything important first. Unloc
 
 - Confirm the device is a Google Pixel 7 (`panther`).
 - Install Android SDK Platform-Tools (`adb` and `fastboot`) on the computer and use a reliable USB cable.
-- Before flashing, update to and boot the latest official Google Android 17 stock firmware for Pixel 7 (`panther`), or at minimum the release-tested Google build `CP2A.260605.016` or newer. Do not treat an Android 17 custom ROM as proof that the required stock firmware is installed. This stock baseline is a prerequisite; the ROM's OTA payload may replace firmware partitions during installation, as explained below.
+- Before flashing, update to and boot the latest official Google Android 17 factory firmware for Pixel 7 (`panther`), or the exact Google firmware version documented as matching the release you are installing. Do not use an older or unverified firmware baseline, and do not treat an Android 17 custom ROM as proof that the required stock firmware is installed. The ROM's OTA payload may replace firmware partitions during installation, as explained below.
 - Remove Google accounts from the phone before unlocking to avoid Factory Reset Protection problems.
-- Download `boot.img`, `dtbo.img`, `vendor_boot.img`, the ROM ZIP, and its matching `.sha256sum` file from the [24.0 alpha release](https://github.com/lineage-panther/panther-release-24.0/releases/tag/24.0-alpha-20261016). Keep all files together.
+- Open the [Panther 24.0 releases](https://github.com/lineage-panther/panther-release-24.0/releases) and select the exact pre-release you intend to install. Download its ROM ZIP, matching `.sha256sum`, `boot.img`, `dtbo.img`, and `vendor_boot.img`. Use only images and packages attached to that same release, and keep them together.
 - Verify the ROM ZIP before continuing:
 
   ```sh
-  sha256sum -c lineage-24.0-20261016-UNOFFICIAL-panther.zip.sha256sum
+  sha256sum -c *.sha256sum
   ```
 
 ### 2. Unlock the bootloader if needed
@@ -63,10 +63,10 @@ In Lineage Recovery:
 3. On the computer, sideload the ROM ZIP:
 
    ```sh
-   adb sideload lineage-24.0-20261016-UNOFFICIAL-panther.zip
+   adb sideload "ROM_ZIP_FILENAME.zip"
    ```
 
-4. If you want Google Apps, obtain an Android 17 `arm64` add-on from its publisher and sideload it now, before the first system boot. Google Apps are not included in this release.
+4. If you want Google Apps, obtain an Android 17 `arm64` add-on from its publisher and sideload it now, before the first system boot. Google Apps are not included in this ROM.
 5. In recovery, choose **Reboot system now**. The first boot can take several minutes.
 
 ## Updating an existing install
