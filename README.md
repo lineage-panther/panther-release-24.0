@@ -45,9 +45,9 @@ This release is **alpha**. We estimate it is approximately 90% functional; that 
 
 <!-- BEGIN AUTO-GENERATED BUILD DETAILS -->
 - Android version: 17
-- OTA build ID (`post-build`): `CP2A.260705.006`
-- OTA fingerprint: `google/panther/panther:17/CP2A.260705.006/15641320:user/release-keys`
-- Android security patch level: `2026-10-01`
+- OTA build ID (`post-build`): `CP3A.261005.002.A1`
+- OTA fingerprint: `google/panther/panther:17/CP3A.261005.002.A1/16269273:user/release-keys`
+- Android security patch level: `2026-11-01`
 <!-- END AUTO-GENERATED BUILD DETAILS -->
 
 These values come from the release ZIP's OTA metadata. They identify this ROM build and are distinct from the stock firmware, bootloader, or baseband version currently installed on a device.
