@@ -54,13 +54,13 @@ If the release includes `vendor_kernel_boot.img`, flash that matching image as w
 fastboot flash vendor_kernel_boot vendor_kernel_boot.img
 ```
 
-The first alpha release does not include a standalone `vendor_kernel_boot.img`. Installing that release without this separate image is at your own risk; do not substitute an image from another build. Later releases should include and use the matching image when it is provided.
+The first alpha release does not include a standalone `vendor_kernel_boot.img`. Installing that release without this separate image is at your own risk; **DO NOT** substitute an image from another build. Later releases should include and use the matching image when it is provided.
 
 If `fastboot reboot recovery` is not supported by your bootloader, reboot to the bootloader and use the volume and power buttons to select **Recovery mode**.
 
-**OTA payload and firmware note:** The ROM ZIP contains a full A/B OTA payload. Its `payload.bin` includes partition updates for `vendor_kernel_boot`, `vendor_boot`, `dtbo`, `init_boot`, `vbmeta` variants, and firmware components such as bootloader and modem partitions. These are not all separate release downloads: recovery applies the images embedded in the payload according to its OTA/slot metadata. In particular, do not assume that installing the latest stock firmware first means the installed ROM will keep those exact bootloader or baseband versions. The maintainer reports that the installed alpha's bootloader and baseband were older than Google's October stock release.
+**OTA payload and firmware note:** The ROM ZIP contains a full A/B OTA payload. Its `payload.bin` includes partition updates for `vendor_kernel_boot`, `vendor_boot`, `dtbo`, `init_boot`, `vbmeta` variants, and firmware components such as bootloader and modem partitions. These are not all separate release downloads: recovery applies the images embedded in the payload according to its OTA/slot metadata. In particular, **DO NOT** assume that installing the latest stock firmware first means the installed ROM will keep those exact bootloader or baseband versions. The tester reports that the installed alpha's bootloader and baseband were older than Google's October stock release.
 
-The ROM ZIP may also update `vendor_kernel_boot` through its OTA payload. The separate image is provided for matching clean-install instructions; never mix it with another release or manually switch slots as a troubleshooting step. This unofficial procedure differs from the current [upstream LineageOS Panther installation guide](https://wiki.lineageos.org/devices/panther/install/), which describes flashing a separate `vendor_kernel_boot.img`. The procedure here has only been tested on the maintainer's Pixel 7.
+The ROM ZIP may also update `vendor_kernel_boot` through its OTA payload. The separate image is provided for matching clean-install instructions; never mix it with another release. This unofficial procedure differs from the current [upstream LineageOS Panther installation guide](https://wiki.lineageos.org/devices/panther/install/), which describes flashing a separate `vendor_kernel_boot.img`. The procedure here has only been tested on the tester's Pixel 7.
 
 ### 4. Format data and sideload the ROM
 
@@ -83,7 +83,7 @@ For an existing Panther ROM install, back up important data. The built-in Update
 
 ### Online update
 
-Open **System updates** and check for updates. An offered weekly build is labeled **ALPHA PRE-RELEASE (UNTESTED)**; compilation is not the same as device testing. Read the corresponding GitHub release notes before installing. The feed advertises the latest candidate only. Routine updates do not require a factory reset.
+Open **System updates** and check for updates. An offered weekly build is labeled **ALPHA PRE-RELEASE (UNTESTED)**; compilation is not the same as device testing. Read the corresponding GitHub release notes before installing. The feed advertises the latest candidate only. Routine updates **DO NOT** require a factory reset.
 
 ### Offline update from a ZIP
 
