@@ -12,7 +12,7 @@ Installing this ROM is at your own risk. Back up anything important first. Unloc
 
 - Confirm the device is a Google Pixel 7 (`panther`).
 - Install Android SDK Platform-Tools (`adb` and `fastboot`) on the computer and use a reliable USB cable.
-- Before flashing, update to and boot the latest official Google Android 17 factory firmware for Pixel 7 (`panther`), or the exact Google firmware version documented as matching the release you are installing. Do not use an older or unverified firmware baseline, and do not treat an Android 17 custom ROM as proof that the required stock firmware is installed. The ROM's OTA payload may replace firmware partitions during installation, as explained below.
+- Before flashing, update to and boot the latest official Google Android 17 factory firmware for Pixel 7 (`panther`), or the exact Google firmware version documented as matching the release you are installing. **DO NOT** use an older or unverified firmware baseline, and **DO NOT** treat an Android 17 custom ROM as proof that the required stock firmware is installed. The ROM's OTA payload may replace firmware partitions during installation, as explained below.
 - Remove Google accounts from the phone before unlocking to avoid Factory Reset Protection problems.
 - Open the [Panther 24.0 releases](https://github.com/lineage-panther/panther-release-24.0/releases) and select the exact pre-release you intend to install. Download its ROM ZIP, matching `.sha256sum`, `boot.img`, `dtbo.img`, and `vendor_boot.img`. Use only images and packages attached to that same release, and keep them together.
 - Verify the ROM ZIP before continuing:
