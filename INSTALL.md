@@ -83,14 +83,15 @@ For an existing Panther ROM install, back up important data. The built-in Update
 
 ### Online update
 
-Open **System updates** and check for updates. An offered weekly build is labeled **ALPHA PRE-RELEASE (UNTESTED)**; compilation is not the same as device testing. Read the corresponding GitHub release notes before installing. The feed advertises the latest candidate only. Routine updates **DO NOT** require a factory reset.
+In **System updates**, tap **Check for updates**. An offered weekly build is labeled **ALPHA PRE-RELEASE (UNTESTED)**; compilation is not the same as device testing. Read the corresponding GitHub release notes before installing. The feed advertises the latest candidate only. Routine updates **DO NOT** require a factory reset.
 
 ### Offline update from a ZIP
 
-1. Open **System updates**.
-2. Choose **Install local update**.
-3. Select the ROM ZIP and wait for the Updater to import and verify it.
-4. Select the imported update and follow the on-screen installation steps. Reboot when prompted.
+1. Save the ROM ZIP on the phone, then open **System updates**.
+2. Tap **Install local update** (shown as **Select update file to install**).
+3. In the Android file picker, navigate to the folder where you saved the ROM ZIP (for example, **Downloads**) and select it. If the current **Recent** view says **No items**, use the picker menu to browse to the correct storage location.
+4. Wait for the Updater to import and verify the ZIP.
+5. Select the imported update and follow the on-screen installation steps. Reboot when prompted.
 
 This local ZIP import does not require an internet connection. Do not select a package for a different device or build.
 
