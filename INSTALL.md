@@ -14,7 +14,7 @@ Installing this ROM is at your own risk. Back up anything important first. Unloc
 - Install Android SDK Platform-Tools (`adb` and `fastboot`) on the computer and use a reliable USB cable.
 - Before flashing, update to and boot the latest official Google Android 17 factory firmware for Pixel 7 (`panther`), or the exact Google firmware version documented as matching the release you are installing. **DO NOT** use an older or unverified firmware baseline, and **DO NOT** treat an Android 17 custom ROM as proof that the required stock firmware is installed. The ROM's OTA payload may replace firmware partitions during installation, as explained below.
 - Remove Google accounts from the phone before unlocking to avoid Factory Reset Protection problems.
-- Open the [Panther 24.0 releases](https://github.com/lineage-panther/panther-release-24.0/releases) and select the exact pre-release you intend to install. Download its ROM ZIP, matching `.sha256sum`, `boot.img`, `dtbo.img`, and `vendor_boot.img`. Use only images and packages attached to that same release, and keep them together.
+- Open the [Panther 24.0 releases](https://github.com/lineage-panther/panther-release-24.0/releases) and select the exact pre-release you intend to install. Download its ROM ZIP, matching `.sha256sum`, `boot.img`, `dtbo.img`, `vendor_boot.img`, and `vendor_kernel_boot.img` when that image is attached. Use only images and packages attached to that same release, and keep them together.
 - Verify the ROM ZIP before continuing:
 
   ```sh
@@ -39,7 +39,7 @@ Skip this section if the bootloader is already unlocked. Unlocking erases the ph
 
 ### 3. Flash the release images
 
-Open a terminal in the folder containing the three `.img` files. Confirm `fastboot devices` lists the phone, then run:
+Open a terminal in the folder containing the images downloaded for this release. Confirm `fastboot devices` lists the phone, then run:
 
 ```sh
 fastboot flash boot boot.img
@@ -48,11 +48,19 @@ fastboot flash vendor_boot vendor_boot.img
 fastboot reboot recovery
 ```
 
+If the release includes `vendor_kernel_boot.img`, flash that matching image as well before rebooting to recovery:
+
+```sh
+fastboot flash vendor_kernel_boot vendor_kernel_boot.img
+```
+
+The first alpha release does not include a standalone `vendor_kernel_boot.img`. Installing that release without this separate image is at your own risk; do not substitute an image from another build. Later releases should include and use the matching image when it is provided.
+
 If `fastboot reboot recovery` is not supported by your bootloader, reboot to the bootloader and use the volume and power buttons to select **Recovery mode**.
 
 **OTA payload and firmware note:** The ROM ZIP contains a full A/B OTA payload. Its `payload.bin` includes partition updates for `vendor_kernel_boot`, `vendor_boot`, `dtbo`, `init_boot`, `vbmeta` variants, and firmware components such as bootloader and modem partitions. These are not all separate release downloads: recovery applies the images embedded in the payload according to its OTA/slot metadata. In particular, do not assume that installing the latest stock firmware first means the installed ROM will keep those exact bootloader or baseband versions. The maintainer reports that the installed alpha's bootloader and baseband were older than Google's October stock release.
 
-The maintainer's tested flow did not manually flash a separate `vendor_kernel_boot.img`; the ROM ZIP applies its own copy during sideload. Do not mix in standalone images or firmware from another build, and do not manually switch slots as a troubleshooting step. This unofficial procedure differs from the current [upstream LineageOS Panther installation guide](https://wiki.lineageos.org/devices/panther/install/), which describes flashing a separate `vendor_kernel_boot.img`. The procedure here has only been tested on the maintainer's Pixel 7.
+The ROM ZIP may also update `vendor_kernel_boot` through its OTA payload. The separate image is provided for matching clean-install instructions; never mix it with another release or manually switch slots as a troubleshooting step. This unofficial procedure differs from the current [upstream LineageOS Panther installation guide](https://wiki.lineageos.org/devices/panther/install/), which describes flashing a separate `vendor_kernel_boot.img`. The procedure here has only been tested on the maintainer's Pixel 7.
 
 ### 4. Format data and sideload the ROM
 
