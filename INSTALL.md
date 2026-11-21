@@ -93,10 +93,10 @@ In **System updates**, tap **Check for updates**. An offered weekly build is lab
 4. Wait for the Updater to import and verify the ZIP.
 5. Select the imported update and follow the on-screen installation steps. Reboot when prompted.
 
-This local ZIP import does not require an internet connection. Do not select a package for a different device or build.
+This local ZIP import **DOES NOT** require an internet connection. **DO NOT** select a package for a different device or build.
 
 ### Recovery and older builds
 
-The Updater blocks downgrades by default. Older ZIPs remain on GitHub, but there is no in-app downgrade button, and installing an older build over a newer one is not supported or tested. If recovery or a return to stock is needed, follow the current official Google factory-image instructions for `panther`; this may erase all data. Do not switch slots manually or mix boot, kernel, or firmware images from different releases. Keep a separate backup and do not rely on an older release as a guaranteed rollback.
+The Updater blocks downgrades by default. Older ZIPs remain on GitHub, but there is **NO** in-app downgrade button, and installing an older build over a newer one is **NOT** supported or tested. If recovery or a return to stock is needed, follow the current official Google factory-image instructions for `panther`; this **WILL** erase all data. **DO NOT** switch slots manually or mix boot, kernel, or firmware images from different releases. Keep a separate backup and **DO NOT** rely on an older release as a guaranteed rollback.
 
-If an expected update is not offered, do not bypass the Updater's compatibility checks. Use the local ZIP option only for a compatible, non-older Panther build, or ask in the [issue tracker](https://github.com/lineage-panther/panther-release-24.0/issues/new/choose) for release-specific guidance.
+If an expected update is not offered, **DO NOT** bypass the Updater's compatibility checks. Use the local ZIP option only for a compatible, non-older Panther build, or ask in the [issue tracker](https://github.com/lineage-panther/panther-release-24.0/issues/new/choose) for release-specific guidance.
