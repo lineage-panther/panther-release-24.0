@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "datetime": 1795181585,
+    "files": [
+      {
+        "filename": "lineage-24.0-20261120-UNOFFICIAL-panther.zip",
+        "os_patch_level": "2026-11-01",
+        "os_sdk_level": 37,
+        "sha256": "342211ecfd3b0fb6ed830b0b74c0980a0329a813bd93bacfbec045217282bcf4",
+        "size": 1552547631,
+        "url": "https://github.com/lineage-panther/panther-release-24.0/releases/download/24.0-alpha-20261121/lineage-24.0-20261120-UNOFFICIAL-panther.zip",
+        "ota_property_files": "payload_metadata.bin:4960:145480,payload.bin:4960:1552539177,payload_properties.txt:1552544195:156,apex_info.pb:2086:1684,care_map.pb:3817:1096,metadata:69:677,metadata.pb:814:1224                        "
+      }
+    ],
+    "type": "UNOFFICIAL",
+    "version": "24.0 ALPHA PRE-RELEASE (UNTESTED) - 24.0-alpha-20261121"
+  }
+]
