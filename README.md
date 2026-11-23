@@ -56,6 +56,8 @@ These values come from the release ZIP's OTA metadata. They identify this ROM bu
 
 See the [Panther ROM 24.0 stable release](https://github.com/lineage-panther/panther-release-24.0/releases/tag/24.0-20261121) for the ROM ZIP, checksum, and matching boot images.
 
+For upstream context, see LineageOS's [Changelog 32](https://www.lineageos.org/Changelog-32/), published October 11, 2026 for LineageOS 24.0 / Android 17. It covers project-wide changes and is not a build-specific changelog for this unofficial ROM.
+
 See the [installation guide](INSTALL.md) before installing.
 
 Verify the ROM ZIP after downloading it:
