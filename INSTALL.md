@@ -1,6 +1,6 @@
-# Install Panther ROM 24.0 alpha
+# Install Panther ROM 24.0
 
-These are unofficial instructions for the Pixel 7 (`panther`). Read the full guide and the notes for the exact release you are installing. The owner tested the clean-install procedure on one Pixel 7; other devices, firmware versions, and installation paths have not been verified.
+These are unofficial instructions for the Pixel 7 (`panther`). Read the full guide and notes for the exact release you are installing. The maintainer has tested the current stable release and clean-install procedure on one Pixel 7; other firmware versions and installation paths have not been verified.
 
 The release notes and the project's [current build details](README.md#build-details) identify the exact Android build ID, fingerprint, and security patch level. These ROM values are distinct from the Google stock firmware version required before installation and from the bootloader/baseband versions that may be written by the ROM payload.
 
@@ -14,7 +14,7 @@ Installing this ROM is at your own risk. Back up anything important first. Unloc
 - Install Android SDK Platform-Tools (`adb` and `fastboot`) on the computer and use a reliable USB cable.
 - Before flashing, update to and boot the latest official Google Android 17 factory firmware for Pixel 7 (`panther`), or the exact Google firmware version documented as matching the release you are installing. **DO NOT** use an older or unverified firmware baseline, and **DO NOT** treat an Android 17 custom ROM as proof that the required stock firmware is installed. The ROM's OTA payload may replace firmware partitions during installation, as explained below.
 - Remove Google accounts from the phone before unlocking to avoid Factory Reset Protection problems.
-- Open the [Panther 24.0 releases](https://github.com/lineage-panther/panther-release-24.0/releases) and select the exact pre-release you intend to install. Download its ROM ZIP, matching `.sha256sum`, `boot.img`, `dtbo.img`, `vendor_boot.img`, and `vendor_kernel_boot.img` when that image is attached. Use only images and packages attached to that same release, and keep them together.
+- Open the [Panther 24.0 releases](https://github.com/lineage-panther/panther-release-24.0/releases) and select the exact stable release you intend to install. Download its ROM ZIP, matching `.sha256sum`, `boot.img`, `dtbo.img`, `vendor_boot.img`, and `vendor_kernel_boot.img` when that image is attached. Use only images and packages attached to that same release, and keep them together.
 - Verify the ROM ZIP before continuing:
 
   ```sh
@@ -54,11 +54,11 @@ If the release includes `vendor_kernel_boot.img`, flash that matching image as w
 fastboot flash vendor_kernel_boot vendor_kernel_boot.img
 ```
 
-The first alpha release does not include a standalone `vendor_kernel_boot.img`. Installing that release without this separate image is at your own risk; **DO NOT** substitute an image from another build. Later releases should include and use the matching image when it is provided.
+The older `24.0-alpha-20261016` release does not include a standalone `vendor_kernel_boot.img`. That limitation applies only to that historical build; **DO NOT** substitute an image from another build. The current stable release includes the matching image.
 
 If `fastboot reboot recovery` is not supported by your bootloader, reboot to the bootloader and use the volume and power buttons to select **Recovery mode**.
 
-**OTA payload and firmware note:** The ROM ZIP contains a full A/B OTA payload. Its `payload.bin` includes partition updates for `vendor_kernel_boot`, `vendor_boot`, `dtbo`, `init_boot`, `vbmeta` variants, and firmware components such as bootloader and modem partitions. These are not all separate release downloads: recovery applies the images embedded in the payload according to its OTA/slot metadata. In particular, **DO NOT** assume that installing the latest stock firmware first means the installed ROM will keep those exact bootloader or baseband versions. The tester reports that the installed alpha's bootloader and baseband were older than Google's October stock release.
+**OTA payload and firmware note:** The ROM ZIP contains a full A/B OTA payload. Its `payload.bin` includes partition updates for `vendor_kernel_boot`, `vendor_boot`, `dtbo`, `init_boot`, `vbmeta` variants, and firmware components such as bootloader and modem partitions. These are not all separate release downloads: recovery applies the images embedded in the payload according to its OTA/slot metadata. In particular, **DO NOT** assume that installing the latest stock firmware first means the installed ROM will keep those exact bootloader or baseband versions.
 
 The ROM ZIP may also update `vendor_kernel_boot` through its OTA payload. The separate image is provided for matching clean-install instructions; never mix it with another release. This unofficial procedure differs from the current [upstream LineageOS Panther installation guide](https://wiki.lineageos.org/devices/panther/install/), which describes flashing a separate `vendor_kernel_boot.img`. The procedure here has only been tested on the tester's Pixel 7.
 
@@ -83,7 +83,7 @@ For an existing Panther ROM install, back up important data. The built-in Update
 
 ### Online update
 
-In **System updates**, tap **Check for updates**. An offered weekly build is labeled **ALPHA PRE-RELEASE (UNTESTED)**; compilation is not the same as device testing. Read the corresponding GitHub release notes before installing. The feed advertises the latest candidate only. Routine updates **DO NOT** require a factory reset.
+In **System updates**, tap **Check for updates**. The feed advertises the current stable release. Read the corresponding GitHub release notes before installing. Routine updates **DO NOT** require a factory reset.
 
 ### Offline update from a ZIP
 

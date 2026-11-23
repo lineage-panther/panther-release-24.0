@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/lineage-panther/panther-release-24.0/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/lineage-panther/panther-release-24.0?label=release"></a>
-  <img alt="Release status: alpha" src="https://img.shields.io/badge/status-alpha-orange">
+  <img alt="Release status: stable" src="https://img.shields.io/badge/status-stable-brightgreen">
   <img alt="Android 17" src="https://img.shields.io/badge/Android-17-green">
   <img alt="Target: Pixel 7 panther" src="https://img.shields.io/badge/device-Pixel%207%20(panther)-blue">
   <a href="https://github.com/lineage-panther/panther-release-24.0/releases"><img alt="Total release downloads" src="https://img.shields.io/github/downloads/lineage-panther/panther-release-24.0/total?label=downloads"></a>
@@ -39,7 +39,7 @@ These screenshots show the ROM running on a Pixel 7. The wallpaper, accent color
 
 ## Status
 
-This release is **alpha**. We estimate it is approximately 90% functional; that is an estimate, not a measured compatibility score. The owner reports daily-driving the October 16, 2026 build. Basic ADB smoke checks confirmed Android 17, completed boot, enforcing SELinux, and running SystemUI and camera services. This does not verify every feature or hardware component; broader ADB and device testing is still needed.
+The current release is **stable** following the maintainer's installation and functional testing on a Pixel 7 (`panther`). The maintainer reports the tested release is fully working. This is an unofficial build tested on the maintainer's device; it is not a guarantee for every device condition, firmware baseline, or installation path. Read the release notes and installation guide before installing.
 
 ## Build details
 
@@ -54,7 +54,7 @@ These values come from the release ZIP's OTA metadata. They identify this ROM bu
 
 ## Download
 
-See the [24.0 alpha release](https://github.com/lineage-panther/panther-release-24.0/releases/tag/24.0-alpha-20261016) for the ROM ZIP, checksum, and boot images.
+See the [Panther ROM 24.0 stable release](https://github.com/lineage-panther/panther-release-24.0/releases/tag/24.0-20261121) for the ROM ZIP, checksum, and matching boot images.
 
 See the [installation guide](INSTALL.md) before installing.
 
@@ -68,9 +68,9 @@ MindTheGapps is not included. Obtain any additional packages from their respecti
 
 ## Release process
 
-Weekly builds are published as GitHub pre-releases after compilation, without device or functional testing. Each pre-release is explicitly labeled untested, and the built-in Updater feed points to the newest pre-release only. Older GitHub releases remain available, but the Updater does not offer a one-tap downgrade. A normal release is published only after the tester manually installs and evaluates a candidate.
+Builds may be published as untested candidates while they are being prepared. A stable release is published only after the maintainer installs and tests that build. The built-in Updater feed points to the current stable release. Older releases remain available on GitHub, but the Updater does not offer a one-tap downgrade.
 
-The weekly pre-release automation updates the Build details above and the `ota.json` feed after the release ZIP is published. If either update fails, the release remains available on GitHub, but the details or built-in Updater feed may be stale.
+When preparing a release, update the Build details above and `ota.json` from the exact published ROM ZIP. Verify the feed URL, checksum, and release assets before announcing the update.
 
 ## Report a bug or request a feature
 

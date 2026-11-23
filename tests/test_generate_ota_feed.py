@@ -32,13 +32,13 @@ class GenerateOtaFeedTest(unittest.TestCase):
         )
         with tempfile.TemporaryDirectory() as temporary_directory:
             package = self.make_package(Path(temporary_directory), metadata)
-            entry = make_feed_entry(package, "24.0-alpha-20261016")
+            entry = make_feed_entry(package, "24.0-20261121")
             package_digest = hashlib.sha256(package.read_bytes()).hexdigest()
             package_size = package.stat().st_size
 
         self.assertEqual(entry["datetime"], 1792267200)
         self.assertEqual(entry["type"], "UNOFFICIAL")
-        self.assertIn("UNTESTED", entry["version"])
+        self.assertEqual(entry["version"], "LineageOS 24.0 STABLE - 24.0-20261121")
         file_entry = entry["files"][0]
         self.assertEqual(len(entry["files"]), 1)
         self.assertEqual(file_entry["os_sdk_level"], 36)
@@ -49,7 +49,7 @@ class GenerateOtaFeedTest(unittest.TestCase):
         self.assertEqual(
             file_entry["url"],
             "https://github.com/lineage-panther/panther-release-24.0/releases/"
-            "download/24.0-alpha-20261016/lineage-24.0-UNOFFICIAL-panther.zip",
+            "download/24.0-20261121/lineage-24.0-UNOFFICIAL-panther.zip",
         )
 
     def test_rejects_package_for_another_device(self):
@@ -61,7 +61,7 @@ class GenerateOtaFeedTest(unittest.TestCase):
                 "post-build=google/cheetah/cheetah:17/CP2A.260705.006/15641320:user/release-keys\n",
             )
             with self.assertRaisesRegex(ValueError, "not 'panther'"):
-                make_feed_entry(package, "24.0-alpha-20261016")
+                make_feed_entry(package, "24.0-20261121")
 
     def test_rejects_incomplete_ota_metadata(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -70,7 +70,7 @@ class GenerateOtaFeedTest(unittest.TestCase):
                 "pre-device=panther\npost-build=google/panther/panther:17/build/id:user/release-keys\n",
             )
             with self.assertRaisesRegex(ValueError, "post-timestamp"):
-                make_feed_entry(package, "24.0-alpha-20261016")
+                make_feed_entry(package, "24.0-20261121")
 
     def test_updates_only_the_marked_readme_block(self):
         readme = (
@@ -128,7 +128,7 @@ class GenerateOtaFeedTest(unittest.TestCase):
                     str(project_root / "scripts/generate_ota_feed.py"),
                     str(package),
                     "--tag",
-                    "24.0-alpha-20261016",
+                    "24.0-20261121",
                     "--output",
                     str(output),
                     "--readme",
@@ -144,7 +144,7 @@ class GenerateOtaFeedTest(unittest.TestCase):
             updated_readme = readme.read_text(encoding="utf-8")
 
         self.assertEqual(len(feed), 1)
-        self.assertIn("UNTESTED", feed[0]["version"])
+        self.assertEqual(feed[0]["version"], "LineageOS 24.0 STABLE - 24.0-20261121")
         self.assertIn("- Android version: 17", updated_readme)
         self.assertIn("- OTA build ID (`post-build`): `CP2A.260705.006`", updated_readme)
 
