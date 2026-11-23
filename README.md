@@ -56,7 +56,7 @@ These values come from the release ZIP's OTA metadata. They identify this ROM bu
 
 See the [Panther ROM 24.0 stable release](https://github.com/lineage-panther/panther-release-24.0/releases/tag/24.0-20261121) for the ROM ZIP, checksum, and matching boot images.
 
-For upstream context, see LineageOS's [Changelog 32](https://www.lineageos.org/Changelog-32/), published October 11, 2026 for LineageOS 24.0 / Android 17. It covers project-wide changes and is not a build-specific changelog for this unofficial ROM.
+October 2026 LineageOS source changes for Pixel 7/Pantah included an Android 17 device-tree refresh, face-unlock overlays, leaner preinstalled-package configuration, and Tensor G2 camera-policy and AVB updates. See the [release notes](https://github.com/lineage-panther/panther-release-24.0/releases/tag/24.0-20261121) for linked upstream commits. The official [Panther Changes page](https://download.lineageos.org/devices/panther/changes) tracks upstream changes by device and build.
 
 See the [installation guide](INSTALL.md) before installing.
 

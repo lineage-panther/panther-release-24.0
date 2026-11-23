@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import tempfile
 import zipfile
 
@@ -13,7 +14,7 @@ import zipfile
 REPOSITORY = "lineage-panther/panther-release-24.0"
 DEVICE = "panther"
 BUILD_TYPE = "UNOFFICIAL"
-BUILD_VERSION = "LineageOS 24.0 STABLE"
+BUILD_VERSION = "LineageOS 24.0"
 BUILD_DETAILS_START = "<!-- BEGIN AUTO-GENERATED BUILD DETAILS -->"
 BUILD_DETAILS_END = "<!-- END AUTO-GENERATED BUILD DETAILS -->"
 
@@ -136,11 +137,18 @@ def make_feed_entry(
     if "ota-property-files" in metadata:
         file_entry["ota_property_files"] = metadata["ota-property-files"]
 
+    if re.fullmatch(r"24\.0-alpha-\d{8}", tag):
+        release_track = "ALPHA PRE-RELEASE (UNTESTED)"
+    elif re.fullmatch(r"24\.0-\d{8}", tag):
+        release_track = "STABLE"
+    else:
+        raise ValueError(f"Unsupported Panther release tag: {tag}")
+
     return {
         "datetime": timestamp,
         "files": [file_entry],
         "type": BUILD_TYPE,
-        "version": f"{BUILD_VERSION} - {tag}",
+        "version": f"{BUILD_VERSION} {release_track} - {tag}",
     }
 
 

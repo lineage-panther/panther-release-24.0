@@ -52,6 +52,23 @@ class GenerateOtaFeedTest(unittest.TestCase):
             "download/24.0-20261121/lineage-24.0-UNOFFICIAL-panther.zip",
         )
 
+    def test_marks_unverified_alpha_tag_as_untested(self):
+        metadata = (
+            "post-timestamp=1792267200\n"
+            "pre-device=panther\n"
+            "post-sdk-level=36\n"
+            "post-security-patch-level=2026-10-01\n"
+            "post-build=google/panther/panther:17/CP2A.260705.006/15641320:user/release-keys\n"
+        )
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            package = self.make_package(Path(temporary_directory), metadata)
+            entry = make_feed_entry(package, "24.0-alpha-20261127")
+
+        self.assertEqual(
+            entry["version"],
+            "LineageOS 24.0 ALPHA PRE-RELEASE (UNTESTED) - 24.0-alpha-20261127",
+        )
+
     def test_rejects_package_for_another_device(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             package = self.make_package(
