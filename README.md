@@ -72,8 +72,6 @@ MindTheGapps is not included. Obtain any additional packages from their respecti
 
 Builds may be published as untested candidates while they are being prepared. A stable release is published only after the maintainer installs and tests that build. The built-in Updater feed points to the current stable release. Older releases remain available on GitHub, but the Updater does not offer a one-tap downgrade.
 
-When preparing a release, update the Build details above and `ota.json` from the exact published ROM ZIP. Verify the feed URL, checksum, and release assets before announcing the update.
-
 ## Report a bug or request a feature
 
 Use the [issue tracker](https://github.com/lineage-panther/panther-release-24.0/issues/new/choose). Include the release tag, device, installation type, steps to reproduce, and expected and actual behavior. ADB logs are useful; redact serial numbers, account data, tokens, and other private information before attaching them.
